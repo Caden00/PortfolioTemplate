@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+    <div class="card-deck">
+    {% for page in pages %}
+    {% if page.image%}
+    <div class="col">
+        <div class="card">
+            <img class="card-img-top" src="{{ page.image }}" alt="Card image cap">
+            <div class="card-body">
+                <a href="{{ page.path }}.html"><h5 class="card-title">{{ page.title }}</h5></a>
+                <p>{{ page.description }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ page.date }}</small>
+            </div>
+        </div>
+    </div>
+    {% elif page.video%}
+    <div class="col">
+        <div class="card">
+            <video class="card-img-top" src="{{ page.video }}" alt="Card image cap" controls></video>
+            <div class="card-body">
+                <a href="{{ page.path }}.html"><h5 class="card-title">{{ page.title }}</h5></a>
+                <p>{{ page.description }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ page.date }}</small>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <a href="{{ page.path }}.html"><h5 class="card-title">{{ page.title }}</h5></a>
+                <p>{{ page.description }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ page.date }}</small>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    </div>
+    
+{% endblock %}

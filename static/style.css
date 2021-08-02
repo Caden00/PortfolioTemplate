@@ -1,0 +1,28 @@
+h1 {
+    margin: 1em 0;
+  }
+  
+  footer {
+    padding-top: 2em;
+  }
+  
+  .spacing-div {
+      height: 15em;
+  }
+
+  .card {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px !important;
+    width: 300px;
+  }
+  .card-title {
+    font-weight: bold;
+  }
+
+  video {
+      max-height: 300px;
+      max-width: 100%;
+
+  }
+
